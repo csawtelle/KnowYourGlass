@@ -17,6 +17,7 @@ var Page = require('../models/page');
 
 // Create endpoint /api/beers for POST
 exports.postPage = function(req, res) {
+  console.log(req.body);
   // Create a new instance of the Beer model
   var page = new Page();
   // Set the beer properties that came from the POST data
@@ -58,7 +59,7 @@ exports.getPages = function(req, res) {
 // Create endpoint /api/page/:page_id for GET
 exports.getPage = function(req, res) {
   // Use the Beer model to find a specific page
-  Page.find({nameame: req.params.name }, function(err, page) {
+  Page.find({name: req.params.name }, function(err, page) {
         if(err) {
             res.json({ message: 'Get failed!', data: err});
         }

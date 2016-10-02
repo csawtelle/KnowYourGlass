@@ -1,14 +1,9 @@
+<div style="padding-top:70px"></div>
 <div>
-    <p>Test the star rating drop box</p>
-    <select ng-model="data.starRating">
-        <option ng-repeat="option in data.starRatings" value="{{option.id}}">{{option.name}}</option>
-    </select>
-    <div class="{{data.starRating}}"></div>
-    <p></p>
     <a href="#/admin/create"><button>Create New Post</button></a>
     <div class="blog_post_link" ng-repeat="page in data.pageList">
-        <a ng-href="#/reviews/{{page.lensName}}">{{page.lensName}}</a>
-        <button ng-click="data.editPost(page.lensName)">Edit Post</button>
-        <button ng-click="data.deletePost(page.lensName)">Delete Post</button>
+        <a ng-href="#/reviews/{{page.name}}">{{page.name}}</a>
+        <button ng-click="data.editPost(page.name)">Edit Post</button>
+        <button ng-click="data.deletePost(page.name)">Delete Post</button>
    </div>
 </div>

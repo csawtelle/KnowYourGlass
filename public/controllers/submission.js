@@ -3,17 +3,15 @@ angular.module('app').controller('submissionCtrl', ['$scope', '$rootScope', '$ht
     var lensReview = $routeParams.lens;
     $scope.data = {};
     $scope.data.blogPostData = {};
-
+    $scope.data.page_paragraphs =  [];
     $http({
         method: 'GET',
         url: "/api/pages/" + lensReview,
     }).then(function successCallback(response) {
-        console.log(response);
         $scope.data.blogPostData  = response.data.data[0];
-        console.log($scope.data.blogPostData);
         $scope.data.blogPostData.username = '';
         $scope.data.blogPostData.password = '';
-        console.log($scope.data.blogPostData);
+        $scope.data.page_paragraphs = $scope.data.blogPostData.page_paragraphs;
     }, function errorCallback(response) {
         return("Failed to make transaction with database.");
     });
@@ -55,9 +53,7 @@ angular.module('app').controller('submissionCtrl', ['$scope', '$rootScope', '$ht
       {name: 'Normal'},
     ];
 
-    $scope.data.page_paragraphs =  [];
-
-	var blogPost = function() {
+    var blogPost = function() {
         if(lensReview) {
             $http({
                 method: 'PUT',
