@@ -10,7 +10,7 @@ var PageSchema   = new mongoose.Schema({
     pictures: [{type: String, required: true}],
     picture_descriptions: [{type: String, required: true}],
     page_paragraphs: [{type: String, required: true}],
-    date: {type: String, required: true, unique:true},
+    date: {type: String, required: true},
     rating: {type: String, required: true}
 });
 

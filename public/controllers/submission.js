@@ -8,7 +8,12 @@ angular.module('app').controller('submissionCtrl', ['$scope', '$rootScope', '$ht
         method: 'GET',
         url: "/api/pages/" + lensReview,
     }).then(function successCallback(response) {
+        console.log(response);
         $scope.data.blogPostData  = response.data.data[0];
+        console.log($scope.data.blogPostData);
+        $scope.data.blogPostData.username = '';
+        $scope.data.blogPostData.password = '';
+        console.log($scope.data.blogPostData);
     }, function errorCallback(response) {
         return("Failed to make transaction with database.");
     });
@@ -85,6 +90,8 @@ angular.module('app').controller('submissionCtrl', ['$scope', '$rootScope', '$ht
     $scope.saveBlogPost = function() {
         var authdata = Base64.decode($cookieStore.get('globals').currentUser.authdata);
         var auth = authdata.split(":");
+        console.log(authdata);
+        console.log(auth);
         $scope.data.blogPostData.username = auth[0];
         $scope.data.blogPostData.password = auth[1];
         blogPost($scope.data.blogPostData);
