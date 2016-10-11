@@ -12,7 +12,7 @@
 <div class="container-fluid">
     <div class="row no-gutter">
         <div ng-repeat="page in data.pageList">
-        <div style="background: url(..{{page.image}}); background-size:cover;text-shadow:2px 3px 6px #000;" class="col-xs-4 latestpostbg" >
+        <div style="background: url({{page.image}}); background-size:cover;text-shadow:2px 3px 6px #000;" class="col-xs-4 latestpostbg" >
         <a ng-href="#reviews/{{page.name}}">
         <p class="latestposttext">{{page.name}}</p>
         </a>
