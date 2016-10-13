@@ -20,8 +20,6 @@
     padding:200px;
     text-align: center;		
     color: #f8f8f8;		
-    background: url(../images/homepage.jpg) no-repeat center center;		
-    background-size: cover;		
     box-shadow: 0px 3px 10px #000;
 }	
 .intro-message {		
@@ -385,4 +383,7 @@ a {
 .latestposttext {
     color:#fff;
     text-shadow:2px 3px 6px #000;
+}
+.right.carousel-control, .left.carousel-control {
+    display: none;
 }

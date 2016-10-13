@@ -1,7 +1,11 @@
 <!--Fix hover effect
 <div class="hovereffect">
 -->
-        <div class="intro-header" no-right-click> 
+
+<div ng-controller="CarouselDemoCtrl">
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <div uib-slide ng-repeat="slide in slides" index="slide.id">
+        <div class="intro-header" style="background:url('{{slide.image}}');background-size:cover" no-right-click> 
             <div class="intro-message">
                 <h1>Know Your Glass</h1>
                 <hr class="intro-divider">
@@ -22,6 +26,10 @@
                 </a>
             </p>
     </div>
+      </div><!-- end uibslide -->
+    </div><!-- end uibcarousel -->
+</div><!-- end controller -->
+
 <!--Fix hover effect
 </div>
 -->

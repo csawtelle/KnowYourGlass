@@ -6,7 +6,9 @@ var app = angular.module('app', [
     'ui.scroll',
     'ui.validate',
     'ui.router',    
-    'ui.grid'
+    'ui.grid',
+    'ngAnimate',
+    'ngTouch'
 ])
 app.config(function($routeProvider) {
     $routeProvider
@@ -42,6 +44,10 @@ app.config(function($routeProvider) {
         .when('/admin/edit/:lens?', {
             templateUrl: 'views/submissionEdit.html',
             controller: 'submissionEditCtrl',
+        })
+        .when('/gerry', {
+            templateUrl: 'views/gerrytest.html',
+            controller:'CarouselDemoCtrl',
         })
         .otherwise({ redirectTo: '/' });
 })
