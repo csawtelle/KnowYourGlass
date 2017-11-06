@@ -1,2 +1,2 @@
-MEAN stack framework for a photography review website.
+Deprecated. All code is available for posterity. MEAN stack framework for a photography review website.
 
